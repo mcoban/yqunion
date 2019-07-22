@@ -1,0 +1,124 @@
+/* reset */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* import fonts */
+@import url(fonts.scss);
+
+/* import layouts */
+@import url(typography.scss);
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+
+  &.narrow {
+    max-width: 640px;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-gap: 30px;
+  grid-template: 1fr / repeat(12, 1fr);
+
+  @for $i from 2 through 12 {
+    .span_#{$i} { grid-column: span $i; }
+  }
+}
+
+.section {
+  margin: 100px auto 0;
+  .section__title {
+    font-weight: 400;
+    font-size: 14px;
+    color: #989898;
+    letter-spacing: 0.5px;
+  }
+  .section__big_text {
+    font-weight: 400;
+    font-size: 40px;
+    color: #323C47;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 50px;
+    margin-top: 30px;
+  }
+
+  .section__blue_title {
+    font-weight: 400;
+    font-size: 40px;
+    color: #1089E8;
+    letter-spacing: 0;
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.05);
+  border-radius: 10px;
+  box-sizing: border-box;
+
+  .inner {
+    padding: 30px;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  .card__title {
+    font-size: 20px;
+    color: #363636;
+    display: block;
+    &.bigger {
+      font-size: 32px;
+      font-weight: 300;
+      line-height: 1.3;
+      letter-spacing: -.5px;
+    }
+  }
+
+  .card__desc {
+    font-size: 16px;
+    opacity: .5;
+    line-height: 1.5;
+    display: block;
+  }
+}
+
+
+.fw_100 { font-weight: 100 !important; }
+.fw_200 { font-weight: 200 !important; }
+.fw_300 { font-weight: 300 !important; }
+.fw_400 { font-weight: 400 !important; }
+.fw_500 { font-weight: 500 !important; }
+.fw_600 { font-weight: 600 !important; }
+.fw_700 { font-weight: 700 !important; }
+.fw_800 { font-weight: 800 !important; }
+
+
+@for $i from 1 through 10 {
+  .mt_#{$i * 10} { margin-top: #{$i * 10}px; }
+  .mr_#{$i * 10} { margin-right: #{$i * 10}px; }
+  .mb_#{$i * 10} { margin-bottom: #{$i * 10}px; }
+  .ml_#{$i * 10} { margin-left: #{$i * 10}px; }
+  .m_#{$i * 10} { margin: #{$i * 10}px; }
+  
+  .pt_#{$i * 10} { padding-top: #{$i * 10}px; }
+  .pr_#{$i * 10} { padding-right: #{$i * 10}px; }
+  .pb_#{$i * 10} { padding-bottom: #{$i * 10}px; }
+  .pl_#{$i * 10} { padding-left: #{$i * 10}px; }
+  .p_#{$i * 10} { padding: #{$i * 10}px; }
+}
